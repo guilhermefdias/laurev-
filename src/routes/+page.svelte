@@ -11,17 +11,17 @@
 
 	const finishStyles: Record<string, { active: string; idle: string }> = {
 		prata: {
-			active: 'bg-slate-700 text-white',
-			idle: 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+			active: 'bg-slate-400 text-slate-950',
+			idle: 'bg-slate-800 text-slate-200 hover:bg-slate-700'
 		},
 		dourado: {
-			active: 'bg-amber-600 text-white',
-			idle: 'bg-amber-50 text-amber-800 hover:bg-amber-100'
+			active: 'bg-amber-400 text-slate-950',
+			idle: 'bg-amber-950/60 text-amber-200 hover:bg-amber-900'
 		}
 	};
 	const neutral = {
-		active: 'bg-neutral-900 text-white',
-		idle: 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+		active: 'bg-amber-400 text-slate-950',
+		idle: 'bg-slate-800 text-slate-200 hover:bg-slate-700'
 	};
 
 	// Só mostra filtros de categorias que realmente têm peças cadastradas
@@ -40,31 +40,33 @@
 </script>
 
 <svelte:head>
-	<title>Catálogo de Semi-Joias</title>
+	<title>Catálogo Laureví</title>
 </svelte:head>
 
-<main class="min-h-screen bg-neutral-50/50 px-4 py-12 sm:px-6 lg:px-8">
+<main
+	class="min-h-screen bg-linear-to-b from-slate-950 via-blue-950 to-slate-900 px-4 py-12 sm:px-6 lg:px-8"
+>
 	<div class="mx-auto max-w-7xl space-y-8">
 		<!-- Cabeçalho -->
 		<header class="space-y-2 text-center">
-			<span class="text-xs font-semibold tracking-widest text-amber-600 uppercase">
+			<span class="text-xs font-semibold tracking-widest text-amber-300 uppercase">
 				Coleção Exclusiva
 			</span>
-			<h1 class="text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
-				Catálogo de Semi-Joias
+			<h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+				Catálogo Laureví
 			</h1>
-			<p class="mx-auto max-w-md text-sm text-neutral-500">
-				Explore nossas peças banhadas e tire dúvidas diretamente com nossa equipe pelo Instagram.
+			<p class="mx-auto max-w-md text-sm text-slate-300">
+				Explore nossas peças e tire dúvidas diretamente com nossa equipe pelo Instagram.
 			</p>
 		</header>
 
 		<!-- Barra de Filtros -->
 		<section
-			class="flex flex-col items-center justify-between gap-4 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm sm:flex-row"
+			class="flex flex-col items-center justify-between gap-4 rounded-2xl border border-slate-700 bg-slate-900/80 p-4 shadow-lg shadow-slate-950/20 sm:flex-row"
 		>
 			<!-- Filtro Categoria -->
 			<div class="flex flex-wrap items-center gap-2">
-				<span class="mr-2 text-xs font-medium text-neutral-400">Tipo:</span>
+				<span class="mr-2 text-xs font-medium text-slate-300">Tipo:</span>
 				<button
 					onclick={() => (selectedCategory = 'todas')}
 					class="rounded-lg px-3 py-1.5 text-xs font-medium transition-colors {selectedCategory ===
@@ -89,7 +91,7 @@
 
 			<!-- Filtro Banho -->
 			<div class="flex items-center gap-2">
-				<span class="mr-2 text-xs font-medium text-neutral-400">Banho:</span>
+				<span class="mr-2 text-xs font-medium text-slate-300">Banho:</span>
 				<button
 					onclick={() => (selectedFinish = 'todos')}
 					class="rounded-lg px-3 py-1.5 text-xs font-medium transition-colors {selectedFinish ===
@@ -119,7 +121,7 @@
 				<ProductCard {product} />
 			{:else}
 				<div
-					class="col-span-full rounded-2xl border border-dashed border-neutral-300 bg-white py-12 text-center text-neutral-400"
+					class="col-span-full rounded-2xl border border-dashed border-slate-700 bg-slate-900/50 py-12 text-center text-slate-300"
 				>
 					{data.products.length === 0
 						? 'Em breve, novas peças por aqui.'

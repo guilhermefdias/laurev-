@@ -14,10 +14,10 @@
 </script>
 
 <div
-	class="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md"
+	class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md"
 >
 	<!-- Imagem do Produto -->
-	<div class="relative aspect-square overflow-hidden bg-neutral-100">
+	<div class="relative aspect-square overflow-hidden bg-slate-100">
 		{#if product.imageUrl}
 			<img
 				src={product.imageUrl}
@@ -38,22 +38,22 @@
 
 	<!-- Conteúdo -->
 	<div class="flex flex-grow flex-col p-5">
-		<span class="mb-1 text-xs font-medium tracking-wider text-neutral-400 uppercase">
+		<span class="mb-1 text-xs font-medium tracking-wider text-slate-500 uppercase">
 			{CATEGORIES[product.category]}
 		</span>
 
-		<h3 class="text-lg font-semibold text-neutral-800 transition-colors group-hover:text-amber-700">
+		<h3 class="text-lg font-semibold text-slate-900 transition-colors group-hover:text-amber-700">
 			{product.name}
 		</h3>
 
-		<p class="mt-1 line-clamp-2 flex-grow text-sm text-neutral-500">
+		<p class="mt-1 line-clamp-2 flex-grow text-sm text-slate-600">
 			{product.description}
 		</p>
 
-		<div class="mt-4 flex items-center justify-between border-t border-neutral-100 pt-4">
+		<div class="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
 			<div>
-				<span class="block text-xs text-neutral-400">Preço</span>
-				<span class="text-xl font-bold text-neutral-900">
+				<span class="block text-xs text-slate-500">Preço</span>
+				<span class="text-xl font-bold text-slate-950">
 					{product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
 				</span>
 			</div>
@@ -63,7 +63,7 @@
 				href={getInstagramLink(product.name)}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="inline-flex items-center gap-1.5 rounded-xl bg-neutral-900 px-4 py-2 text-xs font-medium text-white shadow-sm transition-all hover:bg-neutral-800 active:scale-95"
+				class="inline-flex items-center gap-1.5 rounded-xl bg-slate-900 px-4 py-2 text-xs font-medium text-white shadow-sm transition-all hover:bg-slate-800 active:scale-95"
 			>
 				<span>Perguntar</span>
 				<svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
